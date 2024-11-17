@@ -58,13 +58,22 @@ return { -- confrom.nvim
     "mbbill/undotree",
     lazy = false,
     keys = { { "<leader>u", "<cmd>UndotreeToggle<cr>" } },
-  }, -- {
-  -- 	"nvim-treesitter/nvim-treesitter",
-  -- 	opts = {
-  -- 		ensure_installed = {
-  -- 			"vim", "lua", "vimdoc",
-  --      "html", "css"
-  -- 		},
-  -- 	},
-  -- },
+  }, -- codeium.vim
+  {
+    "Exafunction/codeium.vim",
+    event = "BufEnter",
+  }, -- nvim-treesitter
+  {
+    "nvim-treesitter/nvim-treesitter",
+    opts = {
+      ensure_installed = {
+        "vim",
+        "lua",
+        "vimdoc",
+        "html",
+        "go",
+        "css",
+      },
+    },
+  },
 }
