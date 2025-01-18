@@ -58,10 +58,6 @@ return { -- confrom.nvim
     "mbbill/undotree",
     lazy = false,
     keys = { { "<leader>u", "<cmd>UndotreeToggle<cr>" } },
-  }, -- codeium.vim
-  {
-    "Exafunction/codeium.vim",
-    event = "BufEnter",
   }, -- nvim-treesitter
   {
     "nvim-treesitter/nvim-treesitter",
@@ -75,5 +71,17 @@ return { -- confrom.nvim
         "css",
       },
     },
+  },
+  {
+    "github/copilot.vim",
+    lazy = false,
+    config = function()
+      -- Mapping tab is already used by NvChad
+      vim.g.copilot_no_tab_map = true
+      vim.g.copilot_assume_mapped = true
+      vim.g.copilot_tab_fallback = ""
+      -- The mapping is set to other key, see custom/lua/mappings
+      -- or run <leader>ch to see copilot mapping section
+    end,
   },
 }
